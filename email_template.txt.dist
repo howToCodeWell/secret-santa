@@ -1,0 +1,16 @@
+Subject: ${SUBJECT}
+From: ${FROM_ADDRESS}
+
+Dear ${PERSON_NAME},
+
+Welcome to the 2024 Secret Santa
+
+This year you have got " ${GIVING_TO} " as your Secret Santa!
+
+Please keep this email safe as it can not be sent again.
+
+Yours Truly
+
+Secret Santa
+
+How To Code Well Labs (Santas IT Department)
