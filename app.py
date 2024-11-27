@@ -16,6 +16,16 @@ from email.mime.text import MIMEText
 MODE = os.environ.get("MODE", "dev")
 SEND_EMAIL = os.getenv("SEND_EMAIL", 'False').lower() in ('true', '1', 't')
 
+def file_checks():
+    if os.path.exists('.env') is False:
+        print('.env file is missing')
+        exit(1)
+    if os.path.exists('users.json') is False:
+        print('users.json file is missing')
+        exit(1)
+    if os.path.exists('email_template.txt') is False:
+        print('email_template.txt file is missing')
+        exit(1)
 
 def get_users():
     with open("./users.json") as json_file:
@@ -137,6 +147,8 @@ def print_debug(matches):
 def main():
     print("Welcome to Secret Santa")
     print("Running in " + MODE + " mode")
+
+    file_checks()
 
     users = get_users()
     print("Found " + str(len(users)) + " users")
