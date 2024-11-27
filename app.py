@@ -76,13 +76,14 @@ def send_messages(results):
                                               SUBJECT=subject,
                                               FROM_ADDRESS=email_from_address)
 
-        if "dev" in MODE:
-            print(message)
-
         if SEND_EMAIL:
-            print('Sending email to ' + email)
+            if "dev" in MODE:
+                print("============\n")
+                print('Sending email to ' + email + "\n")
+                print(message)
             # send the message via the server set up earlier.
             server.sendmail("NO-REPLY@SANTA-LAND.faraway", email, message)
+            print("\nSent email to " + email + "\n")
 
     # Terminate the SMTP session and close the connection
     server.quit()
