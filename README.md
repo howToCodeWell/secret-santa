@@ -25,6 +25,22 @@ Create the following files
 
 # Usage
 
+To display debug messages set `MODE` to `dev` in `.env`
+
 ```bash
-python app.py
+MODE=dev
 ```
+
+To send emails set `SEND_EMAIL` to `true` in `.env`
+
+```bash
+SEND_EMAIL=true
+```
+
+
+To run the script without seeing the output stream the command output to a file in `debug`
+
+```bash
+python app.py > debug/output.txt
+```
+No peaking at the output file!
